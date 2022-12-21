@@ -48,6 +48,11 @@ namespace SalesWebMvc
 
             //RGISTER OUR SELLER SERVICE
             services.AddScoped<SellerService>();
+
+            //RGISTER OUR DEPARTMENT SERVICE
+            services.AddScoped<DepartmentService>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
