@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesWebMvc.Models;
 using SalesWebMvc.Services;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,19 @@ namespace SalesWebMvc.Controllers
             return View(list);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
 
+        // INDICATE IS POST
+        [HttpPost]
+        // PREVINE ATACK XSRF/CSRF
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
