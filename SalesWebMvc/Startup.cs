@@ -55,6 +55,8 @@ namespace SalesWebMvc
             //RGISTER OUR DEPARTMENT SERVICE
             services.AddScoped<DepartmentService>();
 
+            //RGISTER OUR SALES RECORD SERVICE
+            services.AddScoped<SalesRecordService>();
 
         }
 
